@@ -2,15 +2,18 @@
 Created on 9 Aug 2019
 
 @author: sivasp
+
+Module to invoke "make cleanclean" on every build folder in //uksfwhawk/export/../psivashanmugam/
 '''
 
 import os, fnmatch, subprocess
 
 def clearWorkspaces():
-    print('Clear workspaces - invokes "make cleanclean" on every build folder in /export/../psivashanmugam/')
+    print('Clear workspaces')
     script_path = os.getcwd()
 
-    for root, dirs, files in os.walk("./../../temp/"):
+#    for root, dirs, files in os.walk("./../../temp/"):
+    for root, dirs, files in os.walk("/export/software/psivashanmugam/"):
         for name in files:
             if fnmatch.fnmatch(name, 'Makefile.ocz'):
                 print(root)
